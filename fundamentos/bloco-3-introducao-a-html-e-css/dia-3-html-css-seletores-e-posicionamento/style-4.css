@@ -12,9 +12,6 @@ h3 {
     border-color: red;
 }
 
-.primary-color {
-    font-style: italic;
-}
 
 .secondary-color:hover {
     border-style: solid;
@@ -25,9 +22,9 @@ h3 {
     border-style: solid;
     border-color:pink;
 }
+
 .third-color {
     font-size: xx-large;
-    font-style: italic;
 }
 
 .fourth-color:hover {
@@ -40,6 +37,6 @@ h3 {
     border-color: yellowgreen;
 }
 
-.fifth-color {
+.odd {
     font-style: italic;
 }
