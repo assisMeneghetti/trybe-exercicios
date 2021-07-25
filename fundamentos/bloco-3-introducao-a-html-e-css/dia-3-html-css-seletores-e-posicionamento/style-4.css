@@ -1,0 +1,45 @@
+div:hover {
+    border-style: solid;
+}
+
+h3 {
+    font-family: monospace;
+    color: teal;
+}
+
+.primary-color:hover {
+    border-style: solid;
+    border-color: red;
+}
+
+.primary-color {
+    font-style: italic;
+}
+
+.secondary-color:hover {
+    border-style: solid;
+    border-color: green;
+}
+
+.third-color:hover {
+    border-style: solid;
+    border-color:pink;
+}
+.third-color {
+    font-size: xx-large;
+    font-style: italic;
+}
+
+.fourth-color:hover {
+    border-style: solid;
+    border-color: brown;
+}
+
+.fifth-color:hover {
+    border-style: solid;
+    border-color: yellowgreen;
+}
+
+.fifth-color {
+    font-style: italic;
+}
