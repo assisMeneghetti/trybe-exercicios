@@ -1,0 +1,37 @@
+/** Source: https://youtu.be/UAi0DiNoGh4*/
+/** Source: https://youtu.be/V568njX6kio*/
+/** Source: https://youtu.be/Pw_R6mz7jPA*/
+
+table {
+    border-collapse: collapse;
+    border: 3px solid gray;
+    width: 75%;
+}
+
+tbody {
+    font-size: 100%;
+    letter-spacing: 1px;
+}
+
+thead {
+    color: indigo;
+}
+
+th {
+    border: 1px solid gray;
+}
+
+caption {
+    font-style: italic;
+    font-size: 120%;
+    font-weight: 700;
+}
+
+td {
+    text-align: center;
+    border: 1px solid gray;
+}
+
+img {
+    width: 350px;
+}
