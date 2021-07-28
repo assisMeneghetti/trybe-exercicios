@@ -31,3 +31,7 @@ td {
     text-align: center;
     border: 1px solid gray;
 }
+
+img {
+    width: 350px;
+}
