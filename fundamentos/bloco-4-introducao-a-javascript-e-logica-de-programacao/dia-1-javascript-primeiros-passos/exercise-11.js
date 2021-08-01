@@ -1,7 +1,7 @@
 // desconta do salario inss e ir
-let grossSalary = 2000;
-let baseSalary;
-let netSalary;
+let grossSalary = 3000;
+let baseSalary = 0;
+let netSalary = 0;
 // aliquotas inss
 const inssOne = 0.08;
 const inssTwo = 0.09;
@@ -29,7 +29,15 @@ if (grossSalary >= 0 && grossSalary <= 1556.94) {
 }
 //calculando dedução ir
 if (baseSalary >= 1903.99 && baseSalary <= 2826.65) {
-  netSalary = baseSalary - (baseSalary * irOne);
+  netSalary = (baseSalary - ((baseSalary * irOne) - irParcelOne));
+  console.log(netSalary);
+} else if (baseSalary >= 2826.66 && baseSalary <= 3751.05) {
+  netSalary = (baseSalary - ((baseSalary * irTwo) - irParcelTwo));
+  console.log(netSalary);
+} else if (baseSalary >= 3751.06 && baseSalary <= 4664.68) {
+  netSalary = (baseSalary - ((baseSalary * irThree) - irParcelThree))
+  console.log(netSalary);
+} else {
+  netSalary = (baseSalary - ((baseSalary * irMax) - irMax))
   console.log(netSalary);
 }
-//tenho que pegar a saída do primeiro grupo para ser entrada do segundo
