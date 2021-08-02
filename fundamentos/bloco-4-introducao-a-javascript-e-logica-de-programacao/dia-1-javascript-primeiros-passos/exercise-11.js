@@ -1,5 +1,5 @@
 // desconta do salario inss e ir
-let grossSalary = 3000;
+let grossSalary = 12000;
 let baseSalary = 0;
 let netSalary = 0;
 // aliquotas inss
