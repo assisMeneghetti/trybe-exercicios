@@ -22,6 +22,7 @@
     </section>
   </main>
   <script>
+    // first part
     let changeColor = document.querySelector('#elementoOndeVoceEsta');
     changeColor.style.color = 'green';
     document.querySelector('#primeiroFilhoDoFilho').innerText = 'Primeiro filho do filho';
@@ -30,7 +31,7 @@
     document.querySelector('#elementoOndeVoceEsta').parentNode.innerText;
     document.querySelector('#elementoOndeVoceEsta').nextSibling.nextSibling;
     document.querySelector('#pai').children.terceiroFilho;
-    // segunda parte
+    // second part
     //#1
     let div = document.createElement('div');
     let dad = document.querySelector('#pai');
@@ -43,7 +44,17 @@
     let p2 = document.createElement('p');
     let sonOfSon = document.querySelector('#primeiroFilhoDoFilho');
     sonOfSon.appendChild(p2);
+    //#4
+    document.querySelector('p').parentElement.parentElement.nextSibling.nextSibling;
+    // third part
+    let dad2 = document.querySelectorAll('#pai');
+    let son1 = document.querySelector('#primeiroFilho');
+    let son2 = document.querySelector('#terceiroFilho');
+    let son3 = document.querySelector('#quartoEUltimoFilho');
 
+    pai.removeChild(son1);
+    pai.removeChild(son2);
+    pai.removeChild(son3);
   </script>
 </body>
 
