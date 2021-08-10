@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <main id="paiDoPai">
+    <section id="pai">
+      <section id="primeiroFilho">Primeiro filho</section>
+      <section id="elementoOndeVoceEsta">
+        <section id="primeiroFilhoDoFilho"></section>
+        <section id="segundoEUltimoFilhoDoFilho">Segundo e último filho do filho</section>
+      </section>
+      Atenção!
+      <section id="terceiroFilho">Terceiro filho</section>
+      <section id="quartoEUltimoFilho">Quarto e último filho</section>
+    </section>
+  </main>
+  <script>
+    // first part
+    let changeColor = document.querySelector('#elementoOndeVoceEsta');
+    changeColor.style.color = 'green';
+    document.querySelector('#primeiroFilhoDoFilho').innerText = 'Primeiro filho do filho';
+    document.querySelector('#pai').firstChild;
+    document.querySelector('#elementoOndeVoceEsta').parentNode;
+    document.querySelector('#elementoOndeVoceEsta').parentNode.innerText;
+    document.querySelector('#elementoOndeVoceEsta').nextSibling.nextSibling;
+    document.querySelector('#pai').children.terceiroFilho;
+    // second part
+    //#1
+    let div = document.createElement('div');
+    let dad = document.querySelector('#pai');
+    dad.appendChild(div);
+    //#2
+    let p = document.createElement('p');
+    let iAmHere = document.querySelector('#elementoOndeVoceEsta');
+    iAmHere.appendChild(p);
+    //#3
+    let p2 = document.createElement('p');
+    let sonOfSon = document.querySelector('#primeiroFilhoDoFilho');
+    sonOfSon.appendChild(p2);
+    //#4
+    document.querySelector('p').parentElement.parentElement.nextSibling.nextSibling;
+    // third part
+    let dad2 = document.querySelectorAll('#pai');
+    let son1 = document.querySelector('#primeiroFilho');
+    let son2 = document.querySelector('#terceiroFilho');
+    let son3 = document.querySelector('#quartoEUltimoFilho');
+
+    pai.removeChild(son1);
+    pai.removeChild(son2);
+    pai.removeChild(son3);
+  </script>
+</body>
+
+</html>
