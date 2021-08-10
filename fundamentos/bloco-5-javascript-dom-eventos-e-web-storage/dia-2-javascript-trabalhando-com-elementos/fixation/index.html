@@ -13,7 +13,7 @@
     <section id="pai">
       <section id="primeiroFilho">Primeiro filho</section>
       <section id="elementoOndeVoceEsta">
-        <section id="primeiroFilhoDoFilho">Primeiro filho do filho</section>
+        <section id="primeiroFilhoDoFilho"></section>
         <section id="segundoEUltimoFilhoDoFilho">Segundo e último filho do filho</section>
       </section>
       Atenção!
@@ -24,6 +24,7 @@
   <script>
     let changeColor = document.querySelector('#elementoOndeVoceEsta');
     changeColor.style.color = 'green';
+    document.querySelector('#primeiroFilhoDoFilho').innerText = 'Primeiro filho do filho';
   </script>
 </body>
 
