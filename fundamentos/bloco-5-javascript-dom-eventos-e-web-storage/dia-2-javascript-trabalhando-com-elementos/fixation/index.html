@@ -31,10 +31,14 @@
     document.querySelector('#elementoOndeVoceEsta').nextSibling.nextSibling;
     document.querySelector('#pai').children.terceiroFilho;
     // segunda parte
-    var newElement = document.createElement('div');
-    var dad = document.querySelector('#pai');
-    dad.appendChild(newElement);
-    console.log(newElement);
+    //#1
+    let div = document.createElement('div');
+    let dad = document.querySelector('#pai');
+    dad.appendChild(div);
+    //#2
+    let p = document.createElement('p');
+    let iAmHere = document.querySelector('#elementoOndeVoceEsta');
+    iAmHere.appendChild(p);
   </script>
 </body>
 
