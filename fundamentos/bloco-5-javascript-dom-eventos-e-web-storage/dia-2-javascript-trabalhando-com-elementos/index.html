@@ -113,9 +113,9 @@
     main.style.background = 'green';
     //#6
     var ulToRemove = document.querySelectorAll('ul');
-    section3.removeChild(ulToRemove[8]);
-    section3.removeChild(ulToRemove[9]);
-
+    for (let index = 8; index < 10; index += 1) {
+      section3.removeChild(ulToRemove[index]);
+    }
   </script>
 </body>
 
