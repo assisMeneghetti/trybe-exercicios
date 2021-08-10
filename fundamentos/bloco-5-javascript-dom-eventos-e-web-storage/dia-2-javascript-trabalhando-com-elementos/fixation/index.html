@@ -30,6 +30,11 @@
     document.querySelector('#elementoOndeVoceEsta').parentNode.innerText;
     document.querySelector('#elementoOndeVoceEsta').nextSibling.nextSibling;
     document.querySelector('#pai').children.terceiroFilho;
+    // segunda parte
+    var newElement = document.createElement('div');
+    var dad = document.querySelector('#pai');
+    dad.appendChild(newElement);
+    console.log(newElement);
   </script>
 </body>
 
