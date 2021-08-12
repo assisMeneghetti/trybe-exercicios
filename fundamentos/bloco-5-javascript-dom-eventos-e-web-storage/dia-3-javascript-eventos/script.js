@@ -13,41 +13,40 @@ function createDaysOfTheWeek() {
 
 createDaysOfTheWeek();
 
-// Escreva seu código abaixo.
 //#1
-// const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-// let ul = document.querySelector('#days');
-// function creatDays(array, tag) {
-//   for (let index = 0; index < dezDaysList.length; index += 1) {
-//     let li = document.createElement('li');
-//     li.innerText = dezDaysList[index];
-//     li.className = 'day';
-//     ul.appendChild(li);
-//   }
-// }
-const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
-let ul = document.querySelector('#days');
+function criaDiaDoMes() {
+  const dezDaysList = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
+  const listaDiasDoMes = document.querySelector('#days');
 
-function creatDays(array, tag, pai) {
-  for (let index = 0; index < array.length; index += 1) {
-    document.createElement(tag);
-    pai.appendChild(tag);
-  }
-}
+  for (let index = 0; index < dezDaysList.length; index += 1) {
+    const dia = dezDaysList[index];
+    const listaCadaDiasDoMes = document.createElement('li');
+    listaCadaDiasDoMes.innerHTML = dia;
+    if (dia === 24 || dia === 31) {
+      listaCadaDiasDoMes.className = 'day holiday';
+    } else if (dia === 4 || dia === 11 || dia === 18) {
+      listaCadaDiasDoMes.className = 'day friday';
+    } else if (dia === 25) {
+      listaCadaDiasDoMes.className = 'day holiday friday';
+    } else {
+      listaCadaDiasDoMes.className = 'day';
+    }
 
-creatDays(dezDaysList, 'li', ul);
+    listaDiasDoMes.appendChild(listaCadaDiasDoMes);
+  };
+};
 
-function setClass(array, classe) {
-  for (let index = 0; index < array.length; index += 1) {
-    tag.className = classe;
-  }
-}
+criaDiaDoMes();
 
-let classe = 'day';
-
-setClass(dezDaysList, classe)
-
-
-
-creatDays(dezDaysList, ul)
 //#2
+let feriado = 'Feriado';
+
+function criaBotao(feriado) {
+  let localDoBotao = document.querySelector('.buttons-container');
+  let botao = document.createElement('button');
+  // botao.innerText = feriado;
+  // botao.id = 'btn-holiday'
+  botao.appendChild(localDoBotao);
+}
+
+criaBotao(feriado);
