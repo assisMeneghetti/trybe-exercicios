@@ -39,14 +39,16 @@ function criaDiaDoMes() {
 criaDiaDoMes();
 
 //#2
-let feriado = 'Feriado';
 
 function criaBotao(feriado) {
   let localDoBotao = document.querySelector('.buttons-container');
+  console.log(localDoBotao);
   let botao = document.createElement('button');
-  // botao.innerText = feriado;
-  // botao.id = 'btn-holiday'
-  botao.appendChild(localDoBotao);
+  console.log(botao);
+  botao.innerText = feriado;
+  botao.id = 'btn-holiday'
+  localDoBotao.appendChild(botao);
 }
 
-criaBotao(feriado);
+criaBotao('Feriados');
+
