@@ -1,5 +1,5 @@
 let lado = 5;
-const asterisco = '*';
+let asterisco = '*';
 let triangulo = '';
 
 for (let qtdLinha = 0; qtdLinha < lado; qtdLinha += 1) {
