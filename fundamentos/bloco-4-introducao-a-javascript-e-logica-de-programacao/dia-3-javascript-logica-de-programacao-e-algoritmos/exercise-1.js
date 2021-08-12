@@ -11,10 +11,12 @@
 // *****
 
 let lado = 5;
-const asterisco = "*";
+const asterisco = '*';
+let quadrado = '';
 
-for (let i = 0; i < lado; i += 1) {
-  for (let i = 0; i < lado; i += 1) {
-    console.log(asterisco);
+for (let qtdLinha = 0; qtdLinha < lado; qtdLinha += 1) {
+  for (let qtdColuna = 0; qtdColuna < lado; qtdColuna += 1) {
+    quadrado += asterisco;
   }
+  console.log(quadrado);
 }
