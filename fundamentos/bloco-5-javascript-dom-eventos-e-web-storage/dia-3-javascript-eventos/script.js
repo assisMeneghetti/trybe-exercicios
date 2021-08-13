@@ -39,14 +39,37 @@ function criaDiaDoMes() {
 criaDiaDoMes();
 
 //#2
-let feriado = 'Feriado';
 
 function criaBotao(feriado) {
   let localDoBotao = document.querySelector('.buttons-container');
   let botao = document.createElement('button');
-  // botao.innerText = feriado;
-  // botao.id = 'btn-holiday'
-  botao.appendChild(localDoBotao);
+  botao.innerText = feriado;
+  botao.id = 'btn-holiday'
+  localDoBotao.appendChild(botao);
 }
 
-criaBotao(feriado);
+criaBotao('Feriados');
+
+//#3
+//*Refiz a partir da resolução do gabarito ao menos umas 5x até funcionar e até eu entender toda a loógica.*/
+function destacaFeriados() {
+  let cor1 = 'rgb(238,238,238)';
+  let cor2 = 'white';
+  let botao = document.getElementById('btn-holiday');
+  let feriados = document.querySelectorAll('.holiday');
+
+
+  botao.addEventListener('click', function () {
+    for (index = 0; index < feriados.length; index += 1) {
+      if (feriados[index].style.backgroundColor === cor2) {
+        feriados[index].style.backgroundColor = cor1;
+      } else {
+        feriados[index].style.backgroundColor = cor2;
+      }
+    }
+  })
+};
+
+destacaFeriados();
+
+
