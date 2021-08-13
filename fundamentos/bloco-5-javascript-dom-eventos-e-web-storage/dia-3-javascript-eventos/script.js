@@ -40,15 +40,15 @@ criaDiaDoMes();
 
 //#2
 
-function criaBotao(feriado) {
-  let localDoBotao = document.querySelector('.buttons-container');
-  let botao = document.createElement('button');
-  botao.innerText = feriado;
-  botao.id = 'btn-holiday'
-  localDoBotao.appendChild(botao);
+function criaBotaoFeriado(feriado) {
+  let localDoBotaoFeriado = document.querySelector('.buttons-container');
+  let botaoFeriado = document.createElement('button');
+  botaoFeriado.innerText = feriado;
+  botaoFeriado.id = 'btn-holiday'
+  localDoBotaoFeriado.appendChild(botaoFeriado);
 }
 
-criaBotao('Feriados');
+criaBotaoFeriado('Feriados');
 
 //#3
 //*Refiz a partir da resolução do gabarito ao menos umas 5x até funcionar e até eu entender toda a loógica.*/
@@ -72,4 +72,13 @@ function destacaFeriados() {
 
 destacaFeriados();
 
+//#4
+function criaBotaoSextaFeira(sexta) {
+  let localDoBotao = document.querySelector('.buttons-container');
+  let botaoSextaFeira = document.createElement('button');
+  botaoSextaFeira.innerText = sexta;
+  botaoSextaFeira.id = 'btn-friday'
+  localDoBotao.appendChild(botaoSextaFeira);
+}
 
+criaBotaoSextaFeira('Sexta-feira');
