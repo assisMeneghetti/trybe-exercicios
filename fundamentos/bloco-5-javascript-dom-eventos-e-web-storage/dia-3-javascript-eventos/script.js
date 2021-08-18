@@ -82,3 +82,30 @@ function criaBotaoSextaFeira(sexta) {
 }
 
 criaBotaoSextaFeira('Sexta-feira');
+
+//#5
+function modificaSextaFeira() {
+  let novoTexto = 'Sexta-feira';
+  let botaoSextaFeira = document.querySelector('#btn-friday');
+  let textoAtualGeral = document.getElementsByClassName('friday');
+
+  for (let textoAtualUnico of textoAtualGeral) {
+    textoAtualUnico = textoAtualUnico.innerText;
+  }
+  //console.log(textoAtualGeral);
+
+  //criar dentro do for uma variavel para coletar texto dentro de cada uma das sextas
+  //console.log(textoAtual);
+  botaoSextaFeira.addEventListener('click', function () {
+    for (let indexSextas = 0; indexSextas < textoAtualGeral.length; indexSextas += 1) {
+      if (textoAtualUnico[indexSextas] === novoTexto) {
+        let textoAtualUnico = textoAtualGeral[indexSextas];
+        textoAtualUnico[indexSextas] = ;
+      } else {
+        textoAtualUnico[indexSextas] = 
+      }
+    }
+  })
+}
+
+modificaSextaFeira();
