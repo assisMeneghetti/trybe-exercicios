@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <fieldset class="info-conteiner">
+    <label for="name">Nome</label>
+    <input type="text" maxlength="40" required id="name">
+    <label for="email">E-mail</label>
+    <input type="text" maxlength="50" required id="email">
+    <label for="cpf">CPF</label>
+    <input type="text" maxlength="11" required id="cpf">
+    <label for="street">Endereço</label>
+    <input type="text" maxlength="200" required id="street">
+    <label for="city">Endereço</label>
+    <input type="text" maxlength="28" required id="city">
+    <select name="state" id="state-list"></select>
+    <div>
+      <input type="radio" id="" name="house-type" value="house">
+      <label for="house-type">Casa</label>
+    </div>
+    <div>
+      <input type="radio" id="" name="house-type" value="ap">
+      <label for="house-type">Apartamento</label>
+    </div>
+  </fieldset>
+  <script src="script.js"></script>
+</body>
+
+</html>

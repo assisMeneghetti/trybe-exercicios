@@ -1,0 +1,11 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  background-color: aliceblue;
+}
+
+.info-conteiner {
+  padding: 50px;
+  margin: 10%;
+  align-items: center;
+}
