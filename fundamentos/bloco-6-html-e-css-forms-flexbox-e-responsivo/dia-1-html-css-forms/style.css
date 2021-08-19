@@ -28,3 +28,21 @@ body {
 .input-conteiner input[type="text"] {
   width: 100%;
 }
+
+#submit-form {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  padding: 10px;
+}
+
+form input {
+  background-color: rgba(151, 139, 139, 0.452);
+}
+
+#result {
+  display: block;
+  margin: 50px;
+  background-color: rgb(171, 203, 204);
+  padding: 30px;
+}

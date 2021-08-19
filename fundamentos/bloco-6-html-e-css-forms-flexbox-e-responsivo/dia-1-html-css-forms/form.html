@@ -10,7 +10,7 @@
 </head>
 
 <body>
-  <form method="GET" action="">
+  <form name="form" id="form" method="GET" action="">
     <fieldset class="info-conteiner">
       <legend>Informações pessoais</legend>
       <div class="input-conteiner">
@@ -30,7 +30,7 @@
         <input type="text" maxlength="200" required id="street">
       </div>
       <div class="input-conteiner">
-        <label for="city">Endereço</label>
+        <label for="city">Cidade</label>
         <input type="text" maxlength="28" required id="city">
       </div>
       <div class="input-conteiner">
@@ -52,20 +52,21 @@
       </div>
       <div class="input-conteiner">
         <label for="">Cargo</label>
-        <input type="text" maxlength="40" required>
+        <input id="job" name="job" type="text" maxlength="40" required>
       </div>
       <div class="input-conteiner">
         <label for="">Descrição do cargo</label>
-        <input type="text" max="500" name="" required>
+        <input id="description" type="text" max="500" name="description" required>
       </div>
       <div class="input-conteiner">
         <label for="date">Data de início</label>
         <input id="date" type="text" name="date">
       </div>
     </fieldset>
-    <button id="submit-form" type="submit">Submeter formulário</button>
+    <button id="submit-form" type="submit" value="submit">Submeter
+      formulário</button>
   </form>
-
+  <div id="result"></div>
   <script src="script.js"></script>
 </body>
 
