@@ -16,3 +16,15 @@ body {
   margin: 6%;
   border: 1px solid rgb(214,214,220);
 }
+
+.input-conteiner {
+  padding: 7px;
+}
+
+.input-conteiner textarea {
+  width: 100%;
+}
+
+.input-conteiner input[type="text"] {
+  width: 100%;
+}
