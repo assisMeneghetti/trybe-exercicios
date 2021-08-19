@@ -52,10 +52,15 @@ let form = document.querySelector('#form');
 
 button.addEventListener('click', function (event) {
 
+  let fieldsets = document.getElementsByTagName('fieldset');
+  console.log(fieldsets.value);
   let text = "";
 
   for (let index = 0; index < form.length; index += 1) {
+    // if (form.elements.value !== undefined) {
     text += form.elements[index].value + '<br>';
+    // }
+    //tá pegando tbm os 2 fildsets 'undefined'
   }
   document.getElementById('result').innerHTML = text;
 });
@@ -77,7 +82,6 @@ button.addEventListener('click', function (event) {
       document.getElementById('result').innerHTML = "Todos os campos são obrigatório!";
       return false;
     }
-
   }
 })
 
