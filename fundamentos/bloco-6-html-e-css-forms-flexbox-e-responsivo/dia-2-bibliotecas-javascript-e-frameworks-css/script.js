@@ -57,7 +57,9 @@ button.addEventListener('click', function (event) {
   let text = "";
 
   for (let index = 0; index < form.length; index += 1) {
+    // if (form.elements.value !== undefined) {
     text += form.elements[index].value + '<br>';
+    // }
     //tá pegando tbm os 2 fildsets 'undefined'
   }
   document.getElementById('result').innerHTML = text;
