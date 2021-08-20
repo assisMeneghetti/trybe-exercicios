@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <!-- <link rel="stylesheet" href="style.css"> -->
+</head>
+
+<body>
+  <form name="form" id="form" method="GET" action="">
+    <h1 class="display-1">Informações pessoais</h1>
+    <div class="container mb-3 input-conteiner">
+      <label for="name">Nome</label>
+      <input type="text" maxlength="40" required id="name">
+    </div>
+    <div class="container mb-3 input-conteiner">
+      <label for="email">E-mail</label>
+      <input type="text" maxlength="50" id="email">
+    </div>
+    <div class="container mb-3 input-conteiner">
+      <label for="cpf">CPF</label>
+      <input type="text" maxlength="11" required id="cpf">
+    </div>
+    <div class="container mb-3 input-conteiner">
+      <label for="street">Endereço</label>
+      <input type="text" maxlength="200" required id="street">
+    </div>
+    <div class="container mb-3 input-conteiner">
+      <label for="city">Cidade</label>
+      <input type="text" maxlength="28" required id="city">
+    </div>
+    <div class="mb-3 input-conteiner">
+      <select name="state" id="state-list"></select>
+    </div>
+    <!-- Tá trazendo tanto Casa quanto ap -->
+    <div class="mb-3 input-conteiner">
+      <input type="radio" id="house" name="house-type" value="Casa">
+      <label for="house">Casa</label>
+    </div>
+    <div class="mb-3 input-conteiner">
+      <input type="radio" id="ap" name="house-type" value="ap">
+      <label for="ap">Apartamento</label>
+    </div>
+    <legend>Informações profissionais:</legend>
+    <div class="mb-3 input-conteiner">
+      <label for="resume">Resumo do currículo</label>
+      <textarea name="resume" id="resume" cols="30" rows="10" maxlength="10000" required></textarea>
+    </div>
+    <div class="mb-3 input-conteiner">
+      <label for="">Cargo</label>
+      <input id="job" name="job" type="text" maxlength="40" required>
+    </div>
+    <div class="mb-3 input-conteiner">
+      <label for="">Descrição do cargo</label>
+      <input id="description" type="text" max="500" name="description" required>
+    </div>
+    <div class="mb-3 input-conteiner">
+      <label for="date">Data de início</label>
+      <input id="date" type="text" name="date">
+    </div>
+    <button class="btn btn-primary btn-lg" id="submit-form" type="submit" value="submit">Submeter
+      formulário</button>
+  </form>
+  <div id="result"></div>
+  <script src="script.js"></script>
+</body>
+
+</html>
