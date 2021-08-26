@@ -1,0 +1,48 @@
+body {
+    font-size: large;
+    margin: 30px;
+}
+h1 {
+    font-size:xx-large;
+}
+
+h2 {
+    font-size: xx-large;
+}
+
+img {
+    max-width: 100%;
+}
+
+figure {
+    margin: 0;
+    padding: 15px;
+}
+
+/* gabarito 
+@media screen and (min-width: 794px) {
+    body {
+        background-color: rgb(145, 194, 138);
+        margin: 25px;
+    }
+    
+    figure {
+        float: left;
+        width: 45%;
+        margin-right: 4.5%;
+      }
+} */
+
+/* gabarito 
+@media screen and (min-width: 1020px) {
+    body {
+      background: rgba(0,255,0,.2);
+      margin: 25px 10%;
+      max-width: 1130px;
+    }
+  
+    figure {
+      width: 30%;
+      margin-right: 2.5%;
+    }
+  } */

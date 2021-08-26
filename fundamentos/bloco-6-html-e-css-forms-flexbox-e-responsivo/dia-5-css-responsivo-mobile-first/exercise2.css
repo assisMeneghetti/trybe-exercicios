@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+@media screen and (max-width: 600px) {
+  html {
+    background-color: burlywood;
+  }
+
+  .container {
+    margin: 20px;
+  }
+
+  header p {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .aside-one h2 {
+    text-align: center;
+  }
+
+  .aside-two h2 {
+    text-align: center;
+  }
+
+  article h1 {
+    text-align: center;
+  }
+
+  article p {
+    text-align: justify;
+  }
+
+}
+
+@media screen and (max-width: 768px) and (min-width: 360px) {
+  html {
+    background-color: rgb(149, 181, 192);
+  }
+  .container {
+    margin: 20px;
+  }
+
+  header p {
+    text-align: center;
+    font-size: 30px;
+  }
+
+  .aside-one h2 {
+    text-align: center;
+  }
+
+  .aside-two h2 {
+    text-align: center;
+  }
+
+  article h1 {
+    text-align: center;
+  }
+
+  article p {
+    text-align: justify;
+  }
+}
