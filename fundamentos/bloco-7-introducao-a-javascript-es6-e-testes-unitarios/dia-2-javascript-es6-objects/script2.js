@@ -11,6 +11,7 @@ const lesson2 = {
   professor: 'Carlos',
 };
 
+
 const lesson3 = {
   materia: 'Matemática',
   numeroEstudantes: 10,
