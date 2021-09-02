@@ -16,3 +16,4 @@ const obj3 = {
 };
 
 // implemente seus testes aqui
+assert.deepStrictEqual(obj2, obj2, 'Os objetos são estritamente idênticos');
