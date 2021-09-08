@@ -12,7 +12,6 @@ function createPerson(name) {
     nomeCompleto: name,
     email: `${name}@trybe.com`
   };
-
 }
 
 console.log(newEmployees(createPerson));
