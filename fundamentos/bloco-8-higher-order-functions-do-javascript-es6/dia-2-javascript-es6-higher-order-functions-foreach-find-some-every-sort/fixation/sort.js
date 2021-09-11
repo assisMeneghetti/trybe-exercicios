@@ -6,8 +6,4 @@ const people = [
   { name: 'Bruna', age: 19 },
 ];
 
-// Adicione se código aqui
-
 people.sort((a, b) => b.age - a.age);
-
-console.log(people);
