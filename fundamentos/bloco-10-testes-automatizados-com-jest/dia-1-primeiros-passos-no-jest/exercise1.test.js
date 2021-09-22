@@ -19,14 +19,12 @@ it('Testa se a mensagem de erro é "parameters must be numbers"', () => {
 //utilizando o describe e it
 // describe('Sum test 1', () => {
 //   it('A função recebe 4 e 5 e retorna 9', () => {
-//     // expect(9).toEqual(sum(4, 5)); //outra forma de fazer
 //     expect(sum(4, 5)).toBe(9);
 //   });
 // });
 
 // describe('Sum test 2', () => {
 //   it('A função recebe 0 e 0 e retorna 0', () => {
-//     // expect(0).toEqual(sum(0, 0)); //outra forma de fazer
 //     expect(sum(0, 0)).toBe(0);
 //   });
 // });
