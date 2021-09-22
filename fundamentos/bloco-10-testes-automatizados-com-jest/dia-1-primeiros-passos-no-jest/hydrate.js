@@ -21,4 +21,3 @@ function hydrate(drinks) {
   }
 }
 
-// console.log(typeof hydrate);

@@ -36,4 +36,3 @@ describe('Testa a função techList', () => {
   });
 });
 
-module.exports = techList;
