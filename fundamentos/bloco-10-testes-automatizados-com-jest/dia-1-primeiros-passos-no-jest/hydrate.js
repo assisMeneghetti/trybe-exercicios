@@ -21,3 +21,4 @@ function hydrate(drinks) {
   }
 }
 
+module.exports = hydrate;
