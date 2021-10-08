@@ -18,33 +18,47 @@ class App extends React.Component {
   }
 
   handleClickLeftBtn = () => {
-    /* Passando uma callback à função setState, que recebe de parâmetros
-    o estado anterior e as props do componente, você garante que as atualizações
-    do estado acontecerão uma depois da outra! */
-    this.setState((previousState, _props) => ({
-      clicksLeftBtn: previousState.clicksLeftBtn + 1
+    this.setState(({clicksLeftBtn}) => ({
+      clicksLeftBtn: clicksLeftBtn + 1
     }))
   }
 
   handleClickCenterBtn = () => {
-    this.setState((previousState, _props) => ({
+    this.setState((previousState, _prop) => ({
       clicksCenterBtn: previousState.clicksCenterBtn + 1
     }))
   }
 
   handleClickRightBtn = () => {
-    this.setState((previousState, _props) => ({
-      clicksRightBtn: previousState.clicksRightBtn + 1
+    this.setState(({clicksRightBtn}) => ({
+      clicksRightBtn: clicksRightBtn + 1
     }))
   }
 
+  changeBtnColor = (num) => {
+    return num % 2 === 0 ? 'green' : 'tomato';
+  }
 
   render () {
+    const { clicksLeftBtn, clicksCenterBtn, clicksRightBtn } = this.state;
     return (
       <div className="btn-container">
-        <button className="btn" onClick={this.handleClickLeftBtn}>{this.state.clicksLeftBtn}</button>
-        <button className="btn" onClick={this.handleClickCenterBtn}>{this.state.clicksCenterBtn}</button>
-        <button className="btn" onClick={this.handleClickRightBtn}>{this.state.clicksRightBtn}</button>
+        <button className="btn" 
+          onClick={ this.handleClickLeftBtn }
+          style={{ backgroundColor: this.changeBtnColor(clicksLeftBtn) }}
+        >
+        {this.state.clicksLeftBtn}
+        </button>
+        <button className="btn" 
+          onClick={ this.handleClickCenterBtn }
+          style={{ backgroundColor: this.changeBtnColor(clicksCenterBtn) }}
+          >
+          {this.state.clicksCenterBtn}</button>
+        <button className="btn" 
+          onClick={ this.handleClickRightBtn }
+          style={{ backgroundColor: this.changeBtnColor(clicksRightBtn) }}
+          >
+          {this.state.clicksRightBtn}</button>
       </div>
     );
   }
