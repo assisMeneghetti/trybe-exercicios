@@ -7,13 +7,18 @@ class Form extends React.Component {
     this.handleChange = this.handleChange.bind(this);
 
     this.state = {
-      inputedText: ''
+      inputName: '',
+      inputEmail: '',
+      inputTextArea: '',
     };
   }
 
-  handleChange(event) {
+  handleChange({ target }) {
+    const { name } = target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+
     this.setState({
-      inputedText: event.target.value,  
+      [name]: value,  
     });
   }
 
@@ -21,8 +26,16 @@ class Form extends React.Component {
     return (
       <form>
         <label>
+          Nome:
+          <input type="text" name="inputName" value={this.state.inputName} onChange={this.handleChange}/>
+        </label>
+        <label>
+          E-mail:
+          <input type="email" name="inputEmail" value={this.state.inputEmail} onChange={this.handleChange}/>
+        </label>
+        <label>
           Diga algo sobre você:
-          <textarea value={this.state.inputedText} onChange={this.handleChange}/>
+          <textarea name="inputTextArea" value={this.state.inputTextArea} onChange={this.handleChange}/>
         </label>
       </form>
     )
