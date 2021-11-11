@@ -1,4 +1,5 @@
 import React from "react";
+import NameInput from './NameInput'
 
 class Form extends React.Component {
   constructor() {
@@ -10,6 +11,7 @@ class Form extends React.Component {
       inputName: '',
       inputEmail: '',
       inputTextArea: '',
+      inputCheckbox: false,
     };
   }
 
@@ -25,10 +27,7 @@ class Form extends React.Component {
   render() {
     return (
       <form>
-        <label>
-          Nome:
-          <input type="text" name="inputName" value={this.state.inputName} onChange={this.handleChange}/>
-        </label>
+        <NameInput value={this.state.inputName} handleChange={this.handleChange} />
         <label>
           E-mail:
           <input type="email" name="inputEmail" value={this.state.inputEmail} onChange={this.handleChange}/>
@@ -37,10 +36,17 @@ class Form extends React.Component {
           Diga algo sobre você:
           <textarea name="inputTextArea" value={this.state.inputTextArea} onChange={this.handleChange}/>
         </label>
+        <label>
+          Concorda com os termos:
+          <input name="inputCheckbox" type="checkbox" checked={this.state.inputCheckbox} onChange={this.handleChange}/>
+        </label>
+        <label>
+          Anexe uma foto sua:
+          <input name="inputFile" type="file"/>
+        </label>
       </form>
     )
   }
-
 }
 
 export default Form;
