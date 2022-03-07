@@ -46,4 +46,17 @@ router.get('/search/:id', async (req, res) => {
   }
 });
 
+// Este endpoint usa o método create do Sequelize para salvar um usuário no banco.
+router.post('/', async (req, res) => {
+  try {
+    const { title, author, pageQuantity } = req.body;
+    const newBook = await Book.create({ title, author, pageQuantity });
+
+    return res.status(201).json(newBook);
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+});
+
 module.exports = router;
