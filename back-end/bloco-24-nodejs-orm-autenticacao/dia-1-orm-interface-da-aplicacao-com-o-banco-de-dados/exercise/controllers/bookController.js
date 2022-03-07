@@ -59,4 +59,26 @@ router.post('/', async (req, res) => {
   }
 });
 
+// Este endpoint usa o método update do Sequelize para alterar um usuário no banco.
+router.put('/:id', async (req, res) => {
+  try {
+    const { title, author, pageQuantity } = req.body;
+    const { id } = req.params;
+
+    const [updateBook] = await Book.update(
+      {  title, author, pageQuantity },
+      { where: { id } },
+    );
+
+    //console.log(updateBook); 
+
+    if(!updateBook) return res.status(404).json({ message: 'Book não encontrado' });
+
+    return res.status(200).json({ message: 'Usuário atualizado com sucesso!' });
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+});
+
 module.exports = router;
