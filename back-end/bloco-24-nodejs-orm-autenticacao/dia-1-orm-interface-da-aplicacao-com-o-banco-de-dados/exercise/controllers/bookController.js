@@ -81,4 +81,21 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// Este endpoint usa o método destroy do Sequelize para remover um usuário no banco.
+router.delete('/:id', async (req, res) => {
+  try {
+    const { id } = req.params;
+    const deleteBook = await Book.destroy(
+      { where: { id } },
+    );
+
+    console.log(deleteBook) // confira o que é retornado quando o user com o id é ou não encontrado;
+
+    return res.status(200).json({ message: 'Book excluído com sucesso!' });
+  } catch (e) {
+    console.log(e.message);
+    res.status(500).json({ message: 'Algo deu errado' });
+  }
+});
+
 module.exports = router;
