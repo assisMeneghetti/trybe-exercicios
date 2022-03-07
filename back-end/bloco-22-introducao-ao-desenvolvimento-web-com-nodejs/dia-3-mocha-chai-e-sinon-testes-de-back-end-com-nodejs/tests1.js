@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const checkNumber = require('./index');
+const checkNumber = require('./index1');
 
 describe("Verifica se 'checkNumber' existe e se é uma função", () => {
   it("Testa se 'checkNumber' existe e se é uma função", () => {
