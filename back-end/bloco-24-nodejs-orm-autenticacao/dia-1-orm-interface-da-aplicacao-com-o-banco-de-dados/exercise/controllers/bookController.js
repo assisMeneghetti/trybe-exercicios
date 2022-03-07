@@ -1,5 +1,6 @@
 const express = require('express');
 const { Book } = require('../models');
+const index = require('../models');
 const router = express.Router();
 
 // Este endpoint usa o método findAll do Sequelize para retorno todos os users.
@@ -11,7 +12,7 @@ router.get('/', async (_req, res) => {
   } catch (error) {
     console.log(error);
 
-    res.status(500).json({ message: "Algo deu errado" });
+    return res.status(500).json({ message: "Algo deu errado" });
   }
 });
 // Este endpoint usa o método findByPk do Sequelize para buscar um usuário pelo id.
@@ -25,7 +26,8 @@ router.get('/:id', async (req, res) => {
     return res.status(200).json(book);
   } catch (e) {
     console.log(e.message);
-    res.status(500).json({ message: 'Algo deu errado' });
+
+    return res.status(500).json({ message: 'Algo deu errado' });
   }
 });
 
@@ -42,7 +44,8 @@ router.get('/search/:id', async (req, res) => {
     return res.status(200).json(book);
   } catch (e) {
     console.log(e.message);
-    res.status(500).json({ message: 'Algo deu errado' });
+
+    return res.status(500).json({ message: 'Algo deu errado' });
   }
 });
 
@@ -55,7 +58,8 @@ router.post('/', async (req, res) => {
     return res.status(201).json(newBook);
   } catch (e) {
     console.log(e.message);
-    res.status(500).json({ message: 'Algo deu errado' });
+
+    return res.status(500).json({ message: 'Algo deu errado' });
   }
 });
 
@@ -77,7 +81,8 @@ router.put('/:id', async (req, res) => {
     return res.status(200).json({ message: 'Usuário atualizado com sucesso!' });
   } catch (e) {
     console.log(e.message);
-    res.status(500).json({ message: 'Algo deu errado' });
+
+    return res.status(500).json({ message: 'Algo deu errado' });
   }
 });
 
@@ -94,7 +99,8 @@ router.delete('/:id', async (req, res) => {
     return res.status(200).json({ message: 'Book excluído com sucesso!' });
   } catch (e) {
     console.log(e.message);
-    res.status(500).json({ message: 'Algo deu errado' });
+
+    return res.status(500).json({ message: 'Algo deu errado' });
   }
 });
 
