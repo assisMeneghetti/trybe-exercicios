@@ -4,7 +4,10 @@ const { Address, Employee } = require('./src/models');
 const bodyParser = require('body-parser');
 const Sequelize = require('sequelize');
 const config = require('./src/config/config');
-const sequelize = new Sequelize(config.development);
+// const sequelize = new Sequelize(config.development);
+const sequelize = new Sequelize(
+  process.env.NODE_ENV === 'test' ? config.test : config.development
+);
 
 const app = express();
 app.use(bodyParser.json());
@@ -23,47 +26,47 @@ app.get('/employees', async (_req, res) => {
 });
 
 // eager loading
-// app.get('/employees/:id', async (req, res) => {
-//   try {
-//     const { id } = req.params;
-//     const employee = await Employee.findOne({
-//         where: { id },
-//         // include: [{ model: Address, as: 'addresses' }], // exibe tudo de 'address' no retorno
-//         include: [{
-//           model: Address, as: 'addresses', attributes: { exclude: ['number'] }, //exclui a propriedade 'nummber' na hora de exibir os dados
-//         }],
-//       });
-
-//     if (!employee)
-//       return res.status(404).json({ message: 'Funcionário não encontrado' });
-
-//     return res.status(200).json(employee);
-//   } catch (e) {
-//     console.log(e.message);
-//     res.status(500).json({ message: 'Algo deu errado' });
-//   };
-// });
-
-// lazy loading
 app.get('/employees/:id', async (req, res) => {
   try {
     const { id } = req.params;
-    const employee = await Employee.findOne({ where: { id } });
+    const employee = await Employee.findOne({
+        where: { id },
+        // include: [{ model: Address, as: 'addresses' }], // exibe tudo de 'address' no retorno
+        include: [{
+          model: Address, as: 'addresses', attributes: { exclude: ['number'] }, //exclui a propriedade 'nummber' na hora de exibir os dados
+        }],
+      });
 
     if (!employee)
       return res.status(404).json({ message: 'Funcionário não encontrado' });
 
-    if (req.query.includeAddresses === 'true') {
-      const addresses = await Address.findAll({ where: { employeeId: id } });
-      return res.status(200).json({ employee, addresses });
-    } // se cair nessa condição retorna o employee e seu respectivo address
-
-    return res.status(200).json(employee); // caso contrario só retorna o employee
+    return res.status(200).json(employee);
   } catch (e) {
     console.log(e.message);
     res.status(500).json({ message: 'Algo deu errado' });
   };
 });
+
+// // lazy loading
+// app.get('/employees/:id', async (req, res) => {
+//   try {
+//     const { id } = req.params;
+//     const employee = await Employee.findOne({ where: { id } });
+
+//     if (!employee)
+//       return res.status(404).json({ message: 'Funcionário não encontrado' });
+
+//     if (req.query.includeAddresses === 'true') {
+//       const addresses = await Address.findAll({ where: { employeeId: id } });
+//       return res.status(200).json({ employee, addresses });
+//     } // se cair nessa condição retorna o employee e seu respectivo address
+
+//     return res.status(200).json(employee); // caso contrario só retorna o employee
+//   } catch (e) {
+//     console.log(e.message);
+//     res.status(500).json({ message: 'Algo deu errado' });
+//   };
+// });
 
 /*// Unmanaged transactions
 app.post('/employees', async (req, res) => {
@@ -113,7 +116,12 @@ app.post('/employees', async (req, res) => {
         city, street, number, employeeId: employee.id
       }, { transaction: t });
 
-      return res.status(201).json({ message: 'Cadastrado com sucesso' });
+      // return res.status(201).json({ message: 'Cadastrado com sucesso' });
+      // Linha editada para testar a aplicação
+      return res.status(201).json({
+      id: employee.id, // esse dado será nossa referência para validar a transação
+      message: 'Cadastrado com sucesso'
+    });
     });
 
     // Se chegou até aqui é porque as operações foram concluídas com sucesso,
