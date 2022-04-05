@@ -1,0 +1,17 @@
+{
+  "name": "dia-1-introducao-a-orientacao-a-objetos",
+  "version": "1.0.0",
+  "description": "1 - Crie uma classe chamada Tv, com os atributos: - brand : marca da TV; * size : tamanho em polegadas; * resolution : resolução da tela; * connections : conexões disponíveis(HDMI, Ethernet, etc.); * connectedTo : conexão atual Este atributo não precisa ser inicializado no construtor . 2 - Dentro da classe Tv, crie o método turnOn , que imprimirá os atributos inicializados no construtor. 3 - Instancie um objeto a partir da classe Tv, chame o método turnOn para imprimir seus atributos.",
+  "main": "Person1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@tsconfig/node14": "^1.0.1",
+    "@types/node": "^17.0.23",
+    "ts-node": "^10.7.0"
+  }
+}
