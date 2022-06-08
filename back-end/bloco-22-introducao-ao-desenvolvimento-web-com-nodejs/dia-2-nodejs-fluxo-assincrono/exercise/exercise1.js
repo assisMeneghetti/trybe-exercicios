@@ -2,10 +2,14 @@
 const exercise1 = (a, b, c) => {
     const promise = new Promise((resolve, reject) => {
       const condition = typeof a !== "number" || typeof b !== "number" || typeof c !== "number";
-      if (condition) throw new Error("Informe apenas números");
+
+      if (condition) reject(new Error("Informe apenas números"));
+
       const result = (a + b) * c;
-      resolve(result)
-    })
+
+      resolve(result);
+    });
+
     return promise;
 };
 
