@@ -1,5 +1,5 @@
 const { expect } = require('chai');
-const checkNumber = require('./index1');
+const checkNumber = require('../checkNumber');
 
 describe("Verifica se 'checkNumber' existe e se é uma função", () => {
   it("Testa se 'checkNumber' existe e se é uma função", () => {
@@ -28,6 +28,7 @@ describe("Verifica quando 'checkNumber' recebe number < 0 retorna 'negativo'", (
     expect(answer).to.be.a('string');
   });
 });
+
 describe("Verifica quando 'checkNumber' recebe 0 retorna 'neutro'", () => {
   it("Testa se 'checkNumber' retorna 'neutro'", () => {
     const answer = checkNumber(0);
@@ -46,9 +47,4 @@ describe("Verifica quando 'checkNumber' recebe valor not number", () => {
   });
 });
 
-describe("Verifica se 'writeFile' existe e se é uma função", () => {
-  it("Testa se 'checkNumber' existe e se é uma função", () => {
-    expect(checkNumber).to.be.a('function');
-  });
-});
 

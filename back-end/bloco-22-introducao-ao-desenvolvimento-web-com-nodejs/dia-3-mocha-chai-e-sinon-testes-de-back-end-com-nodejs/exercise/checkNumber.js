@@ -9,6 +9,6 @@ const checkNumber = (number) => {
   }
 };
 
-console.log(checkNumber(0));
+// console.log(checkNumber(0));
 
 module.exports = checkNumber;
