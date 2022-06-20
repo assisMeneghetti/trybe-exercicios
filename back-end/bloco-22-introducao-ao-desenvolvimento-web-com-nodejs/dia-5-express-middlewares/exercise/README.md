@@ -59,5 +59,3 @@ Copiar
     4.  Caso o token seja inválido ou inexistente, a resposta deve possuir o status `401 - Unauthorized` e o JSON `{ message: 'Token inválido!' }`.
 
 * * *
-
-Dê seu feedback
