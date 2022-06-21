@@ -1,0 +1,36 @@
+// src: https://app.betrybe.com/course/back-end/introducao-ao-desenvolvimento-web-com-nodejs/atividades-solucoes-propostas/solutions/24c41754-4ce1-4b52-931a-56a736e56587/solucoes-propostas-das-atividades/e772825b-3445-4443-a197-39b8b52e4f3d?use_case=calendar
+const isNameValid = (req, res, next) => {
+  const { name } = req.body;
+
+  if (!name || name.length < 5) {
+    return res.status(400).json({ message: 'invalid data' });
+  }
+
+  next();
+};
+
+const isInitialsValid = (req, res, next) => {
+  const { initials } = req.body;
+
+  if (!initials || initials.length > 3) {
+    return res.status(400).json({ message: 'invalid data' });
+  }
+
+  next();
+};
+
+const isCountryValid = (req, res, next) => { 
+  const { country } = req.body;
+
+  if (!country || country.length < 3) {
+    return res.status(400).json({ message: 'invalid data' });
+  }
+
+  next();
+};
+
+module.exports = {
+  isNameValid,
+  isInitialsValid,
+  isCountryValid,
+};
