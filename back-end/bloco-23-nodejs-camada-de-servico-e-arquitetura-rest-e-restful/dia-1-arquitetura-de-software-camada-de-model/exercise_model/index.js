@@ -1,29 +1,21 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const controllers = require('./controllers');
+const helmet = require('helmet');
+const morgan = require('morgan');
 const middlewares = require('./middlewares');
+const routes = require('./routers');
 
 const app = express();
 const port = 3000;
 
-const validations = [
-  middlewares.validateEmail,
-  middlewares.validateFirstName,
-  middlewares.validateLastName,
-  middlewares.validatePassword,
-];
-
 app.use(bodyParser.json());
+app.use(helmet());
+app.use(morgan('common'));
 
-// READ
-app.get('/user', controllers.getAllUsers);
+app.use('/', routes.userRoute);
 
-// CREATE
-app.post('/users',
-  validations,
-  controllers.createUser,
-);
+app.all('*', middlewares.routeNotFound);
 
 app.use(middlewares.handleError);
 
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`));
