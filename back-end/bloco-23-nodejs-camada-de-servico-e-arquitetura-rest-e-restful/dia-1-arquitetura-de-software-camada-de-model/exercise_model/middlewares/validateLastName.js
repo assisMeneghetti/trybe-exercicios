@@ -1,7 +1,14 @@
+const { serialize } = require('../model/user');
+
 module.exports = (req, res, next) => {
   try {
-    const { last_name } = req.body;
-    if (!last_name) return res.status(400).json({ message: "O campo 'last_name' é obrigatório"});
+    const { lastName } = serialize(req.body);
+    if (!lastName) {
+      return res.status(400).json({
+        error: true,
+        message: 'O campo \'last_name\' é obrigatório',
+      }); 
+}
     return next();
   } catch (e) {
     return next(e);
