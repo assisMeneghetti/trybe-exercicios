@@ -1,14 +1,13 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 
-const bookController = require('./src/controllers/bookController');
+const userController = require('./src/database/controllers/userController');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(bodyParser.json());
+app.use(express.json());
 
-app.use('/book', bookController);
+app.use('/user', userController);
 
 app.listen(PORT, () => console.log(`Ouvindo na porta ${PORT}!`));
 

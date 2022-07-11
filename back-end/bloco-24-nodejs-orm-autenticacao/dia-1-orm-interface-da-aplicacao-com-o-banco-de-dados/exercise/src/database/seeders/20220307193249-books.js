@@ -6,14 +6,16 @@ module.exports = {
       {
         title: 'Vida de Um Programador',
         author: 'Assis',
-        pageQuantity: 450,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        page_quantity: 450,
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
       {
         title: 'Vida de Um Programador 2',
         author: 'Matheus',
-        pageQuantity: 600,
-        createdAt: Sequelize.literal('CURRENT_TIMESTAMP'),
+        page_quantity: 600,
+        created_at: Sequelize.literal('CURRENT_TIMESTAMP'),
+        updated_at: Sequelize.literal('CURRENT_TIMESTAMP'),
       },
     ], {}),
 

@@ -1,7 +1,8 @@
 const express = require('express');
-const { Book } = require('../models');
-const index = require('../models');
+const { Book } = require('../database/models');
+
 const router = express.Router();
+const algoDeuErrado = 'Algo deu errado';
 
 // Este endpoint usa o método findAll do Sequelize para retorno todos os users.
 router.get('/', async (_req, res) => {
@@ -12,7 +13,7 @@ router.get('/', async (_req, res) => {
   } catch (error) {
     console.log(error);
 
-    return res.status(500).json({ message: "Algo deu errado" });
+    return res.status(500).json({ message: algoDeuErrado });
   }
 });
 // Este endpoint usa o método findByPk do Sequelize para buscar um usuário pelo id.
@@ -27,7 +28,7 @@ router.get('/:id', async (req, res) => {
   } catch (e) {
     console.log(e.message);
 
-    return res.status(500).json({ message: 'Algo deu errado' });
+    return res.status(500).json({ message: algoDeuErrado });
   }
 });
 
@@ -37,7 +38,7 @@ router.get('/search/:id', async (req, res) => {
   try {
     const { id } = req.params;
     const { title } = req.query;
-    const book = await Book.findOne({ where: { id, title }});
+    const book = await Book.findOne({ where: { id, title } });
 
     if (!book) return res.status(404).json({ message: 'Book não encontrado' });
 
@@ -45,7 +46,7 @@ router.get('/search/:id', async (req, res) => {
   } catch (e) {
     console.log(e.message);
 
-    return res.status(500).json({ message: 'Algo deu errado' });
+    return res.status(500).json({ message: algoDeuErrado });
   }
 });
 
@@ -59,7 +60,7 @@ router.post('/', async (req, res) => {
   } catch (e) {
     console.log(e.message);
 
-    return res.status(500).json({ message: 'Algo deu errado' });
+    return res.status(500).json({ message: algoDeuErrado });
   }
 });
 
@@ -70,19 +71,17 @@ router.put('/:id', async (req, res) => {
     const { id } = req.params;
 
     const [updateBook] = await Book.update(
-      {  title, author, pageQuantity },
+      { title, author, pageQuantity },
       { where: { id } },
     );
 
-    //console.log(updateBook); 
-
-    if(!updateBook) return res.status(404).json({ message: 'Book não encontrado' });
+    if (!updateBook) return res.status(404).json({ message: 'Book não encontrado' });
 
     return res.status(200).json({ message: 'Usuário atualizado com sucesso!' });
   } catch (e) {
     console.log(e.message);
 
-    return res.status(500).json({ message: 'Algo deu errado' });
+    return res.status(500).json({ message: algoDeuErrado });
   }
 });
 
@@ -94,13 +93,13 @@ router.delete('/:id', async (req, res) => {
       { where: { id } },
     );
 
-    console.log(deleteBook) // confira o que é retornado quando o user com o id é ou não encontrado;
+    console.log(deleteBook); // confira o que é retornado quando o user com o id é ou não encontrado;
 
     return res.status(200).json({ message: 'Book excluído com sucesso!' });
   } catch (e) {
     console.log(e.message);
 
-    return res.status(500).json({ message: 'Algo deu errado' });
+    return res.status(500).json({ message: algoDeuErrado });
   }
 });
 
