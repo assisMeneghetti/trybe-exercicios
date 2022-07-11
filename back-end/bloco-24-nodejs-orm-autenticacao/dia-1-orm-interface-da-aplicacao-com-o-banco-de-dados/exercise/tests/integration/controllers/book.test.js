@@ -7,7 +7,7 @@ chai.use(chaiHttp);
 const { expect } = chai;
 
 const app = require('../../../index');
-const { Book } = require('../../../models');
+const { Book } = require('../../../src/database/models');
 
 describe('Busca todos os books', () => {
   describe('quando não existe nenhum book cadastrado', () => {
