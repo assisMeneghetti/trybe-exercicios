@@ -1,7 +1,7 @@
 const express = require('express');
-const bodyParser = require("body-parser");
+const bodyParser = require('body-parser');
 
-const bookController = require('./controllers/bookController');
+const bookController = require('./src/controllers/bookController');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
