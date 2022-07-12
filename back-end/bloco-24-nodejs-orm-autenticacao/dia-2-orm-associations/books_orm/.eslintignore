@@ -1,0 +1,4 @@
+node_modules
+tests
+src/database/models/index.js
+src/database/seeders
